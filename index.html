@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bees and their hive</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="css\main.css">
+    <script defer src="js\main_js.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js" integrity="sha512-k37wQcV4v2h6jgYf5IUz1MoSKPpDs630XGSmCaCCOXxy2awgAWKHGZWr9nMyGgk3IOxA1NxdkN8r1JHgkUtMoQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col" style="width: 70%">
+                <header>
+                    <img src="img\ugent_logo.png" alt="Ugent logo" id="logo_ugent" style="width: 120px;">
+                    <h1 id="titel">Beehive monitoring system</h1>
+                    <h3 class="text-warning" id="ondertitel">Bees and their hive</h3>
+                    <img src="img\honeybeevalley_logo.png" alt="Honeybee Valley logo" id="logo_honeybeevalley" style="width: 120px;">
+                </header>
+            </div>
+        </div>
+        <br />
+        <div class="nav-bar">
+            <div class="d-flex justify-content-center align-items-center">
+                <a href="index.html" class="btn btn-warning mx-4">Home</a>
+                <a href="sensor.html" class="btn btn-warning mx-4">Sensor data</a>
+                <a href="pollen.html" class="btn btn-warning mx-4">Pollen tracker</a>
+                <a href="arenatest.html" class="btn btn-warning mx-4">Arenatest</a>
+                <a href="knocker.html" class="btn btn-warning mx-4">Knocker test</a>
+            </div>
+        </div>
+        <div class="content-body row">
+            <h2 class="body-title">Home</h2>
+            <div class="left-column col-12">
+                <h4>Current Sensor Values</h4>
+                <div class="sensor-grid row">
+                    <div class="col-md-4 sensor-card">
+                        <div class="card" id="temperature_sensor">
+                            <img src="img/temperature-icon.png" class="card-img-top" alt="Temperature Icon">
+                            <div class="card-body">
+                                <h5 class="card-title">Temperature</h5>
+                                <p class="card-text">25°C</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 sensor-card">
+                        <div class="card" id="pressure_sensor">
+                            <img src="img/pressure-icon.png" class="card-img-top" alt="Pressure Icon">
+                            <div class="card-body">
+                                <h5 class="card-title">Pressure</h5>
+                                <p class="card-text">1013 hPa</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 sensor-card">
+                        <div class="card" id="weight_sensor">
+                            <img src="img/weight-icon.png" class="card-img-top" alt="Weight Icon">
+                            <div class="card-body">
+                                <h5 class="card-title">Weight</h5>
+                                <p class="card-text">1500 g</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 sensor-card">
+                        <div class="card" id="gyroscope_sensor">
+                            <img src="img/gyroscope-icon.png" class="card-img-top" alt="Gyroscope Icon">
+                            <div class="card-body">
+                                <h5 class="card-title">Gyroscope</h5>
+                                <p class="card-text">0.02 rad/s</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 sensor-card">
+                        <div class="card" id="accelerometer_sensor">
+                            <img src="img/accelerometer-icon.png" class="card-img-top" alt="Accelerometer Icon">
+                            <div class="card-body">
+                                <h5 class="card-title">Accelerometer</h5>
+                                <p class="card-text">0.05 m/s²</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 sensor-card">
+                        <div class="card" id="microphone_sensor">
+                            <img src="img/microphone-icon.png" class="card-img-top" alt="Microphone Icon">
+                            <div class="card-body">
+                                <h5 class="card-title">Microphone</h5>
+                                <p class="card-text">45 dB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-column col-12">
+                <h4>Project Information</h4>
+                <p>
+                    Honeybees (Apis mellifera) are crucial pollinators, supporting biodiversity and global food production. A third of the world’s food production depends on bees, with many crops like fruits, vegetables, and nuts reliant on their pollination. However, bee populations are under threat due to factors like habitat loss, pesticides, climate change, and disease. One of the most dangerous threats in Western Europe today is the Varroa destructor mite, a parasite that weakens honeybee colonies and spreads viruses, leading to colony collapse. Managing Varroa infestations has become a priority for beekeepers and researchers, with efforts focused on alternative control strategies such as breeding mite-resistant bees.
+
+                    The objective of this thesis is to develop a comprehensive data acquisition system to monitor honeybee colony health and behavior. This system integrates sensors connected to a Raspberry Pi to track hive variables like weight, temperature, sound, and visual data. A camera-based system at the hive entrance will count the incoming and outgoing bees and analyze their behavior using computer vision, contributing to the assessment of foraging efficiency and colony health. The research also includes investigating honeybee responses to Varroa destructor mites through an arena test, helping identify Varroa-resistant colonies and supporting future breeding programs.
+                </p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; 2025 UGent</p>
+            <p>A project by UGent for Honeybee Valley. Thesis: "Bees and their hive". Contact & info:</p>
+
+            <div class="footer-info">
+                <div class="participants">
+                    <h5>Students:</h5>
+                    <ul>
+                        <li>Robbe De Voet - <a href="mailto:robbe.devoet@ugent.be">robbe.devoet@ugent.be</a></li>
+                        <li>Dieter Van Hove - <a href="mailto:dieter.vanhove@ugent.be">dieter.vanhove@ugent.be</a></li>
+                        <li>Lexi Van Rentergem - <a href="mailto:lexi.vanrentergem@ugent.be">lexi.vanrentergem@ugent.be</a></li>
+                        <li>Lowie Van Ryckeghem - <a href="mailto:lowie.vanryckeghem@ugent.be">lowie.vanryckeghem@ugent.be</a></li>
+                    </ul>
+                </div>
+
+                <div class="promotors">
+                    <h5>Promotors:</h5>
+                    <ul>
+                        <li>prof. dr. ir. Paul Devos - <a href="mailto:p.devos@ugent.be">p.devos@ugent.be</a></li>
+                        <li>prof. dr. Dirk de Graaf - <a href="mailto:dirk.degraaf@ugent.be">dirk.degraaf@ugent.be</a></li>
+                        <li>dr. Ellen Danneels - <a href="mailto:ellen.danneels@ugent.be">ellen.danneels@ugent.be</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

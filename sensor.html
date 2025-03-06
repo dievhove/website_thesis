@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bees and their hive</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="css\sensor_data.css">
+    <script defer src="js\sensor_data.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js" integrity="sha512-k37wQcV4v2h6jgYf5IUz1MoSKPpDs630XGSmCaCCOXxy2awgAWKHGZWr9nMyGgk3IOxA1NxdkN8r1JHgkUtMoQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col" style="width: 70%">
+                <header>
+                    <img src="img\ugent_logo.png" alt="Ugent logo" id="logo_ugent">
+                    <h1 id="titel"> Beehive monitoring system</h1>
+                    <h3 class="text-warning" id="ondertitel"> Bees and their hive</h3>
+                    <img src="img\honeybeevalley_logo.png" alt="Honeybee Valley logo" id="logo_honeybeevalley">
+                </header>
+            </div>
+        </div>
+        <br />
+        <div class="nav-bar">
+            <div class="d-flex justify-content-center align-items-center">
+                <a href="index.html" class="btn btn-warning mx-4">Home</a>
+                <a href="sensor.html" class="btn btn-warning mx-4">Sensor data</a>
+                <a href="pollen.html" class="btn btn-warning mx-4">Pollen tracker</a>
+                <a href="arenatest.html" class="btn btn-warning mx-4">Arenatest</a>
+                <a href="knocker.html" class="btn btn-warning mx-4">Knocker test</a>
+            </div>
+        </div>
+        <div class="content-body row">
+            <h2 class="body-title">Sensor data</h2>
+            <div class="left-column col-md-3">
+                <h4>Current Sensor Values</h4>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Sensor</th>
+                            <th scope="col">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="img/temperature-icon.png" class="current-value" alt="Temperature Icon">Temperature</td>
+                            <td id="temp_value">25°C</td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/pressure-icon.png" class="current-value" alt="Pressure Icon"> Pressure</td>
+                            <td id="humidity_value">1013 hPa</td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/weight-icon.png" class="current-value" alt="Weight Icon"> Weight</td>
+                            <td id="weight_value">1500g</td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/gyroscope-icon.png" class="current-value" alt="Gyroscope Icon">Gyroscope</td>
+                            <td id="gyroscope_value">0.02 rad/s</td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/accelerometer-icon.png" class="current-value" alt="Accelerometer Icon">Accelerometer</td>
+                            <td id="accelerometer_value">0.05 m/s²</td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/microphone-icon.png" class="current-value" alt="Microphone Icon">Microphone</td>
+                            <td id="microphone_value">45 dB</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="right-column col-md-9">
+                <h4>
+                    Sensor History - Date: <input type="date" id="dateSelector" class="form-control form-control-sm ms-2" style="width: auto; display: inline-block;">
+                </h4>
+                <div class="row">
+                    <div class="col sensorcharts">
+                        <div id="temperature_chart" style="width: 100%; height: 300px;"></div>
+                    </div>
+                    <div class="col sensorcharts">
+                        <div id="pressure_chart" style="width: 100%; height: 300px;"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col sensorcharts">
+                        <div id="weight_chart" style="width: 100%; height: 300px;"></div>
+                    </div>
+                    <div class="col sensorcharts">
+                        <div id="gyroscope_chart" style="width: 100%; height: 300px;"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col sensorcharts">
+                        <div id="accelerometer_chart" style="width: 100%; height: 300px;"></div>
+                    </div>
+                    <div class="col sensorcharts">
+                        <div id="microphone_chart" style="width: 100%; height: 300px;"></div>
+                    </div>
+                </div>
+         
+                
+                
+               
+                
+                
+            </div>
+            <div class="footer">
+                <p>&copy; 2025 UGent</p>
+                <p>A project by UGent for Honeybee Valley. Thesis: "Bees and their hive". Contact & info:</p>
+
+                <div class="footer-info">
+                    <div class="participants">
+                        <h5>Students:</h5>
+                        <ul>
+                            <li>Robbe De Voet - <a href="mailto:robbe.devoet@ugent.be">robbe.devoet@ugent.be</a></li>
+                            <li>Dieter Van Hove - <a href="mailto:dieter.vanhove@ugent.be">dieter.vanhove@ugent.be</a></li>
+                            <li>Lexi Van Rentergem - <a href="mailto:lexi.vanrentergem@ugent.be">lexi.vanrentergem@ugent.be</a></li>
+                            <li>Lowie Van Ryckeghem - <a href="mailto:lowie.vanryckeghem@ugent.be">lowie.vanryckeghem@ugent.be</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="promotors">
+                        <h5>Promotors:</h5>
+                        <ul>
+                            <li>
+                                prof. dr. ir. Paul Devos - <a href="mailto:p.devos@ugent.be">p.devos@ugent.be</a>
+                            </li>
+                            <li>prof. dr. Dirk de Graaf - <a href="mailto:dirk.degraaf@ugent.be">dirk.degraaf@ugent.be</a></li>
+                            <li>dr. Ellen Danneels - <a href="mailto:ellen.danneels@ugent.be">ellen.danneels@ugent.be</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
